@@ -180,17 +180,21 @@ export const Author: React.FC = () => {
               <div className="flex items-center justify-between mt-6 pt-5 border-t border-stone-200">
                 <button
                   onClick={prevSlide}
+                  aria-label="Предыдущий слайд"
                   className="w-10 h-10 flex items-center justify-center text-primary-800 hover:text-primary-600 hover:bg-primary-50 transition-colors rounded-full"
                 >
                   <ChevronLeft size={28} />
                 </button>
 
                 {/* Dots */}
-                <div className="flex gap-2">
+                <div className="flex gap-2" role="tablist" aria-label="Навигация по слайдам">
                   {slides.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => changeSlide(idx)}
+                      aria-label={`Слайд ${idx + 1}`}
+                      aria-selected={idx === currentSlide}
+                      role="tab"
                       className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentSlide
                         ? 'bg-primary-600 w-8'
                         : 'bg-stone-300 hover:bg-stone-400 w-2.5'
@@ -201,6 +205,7 @@ export const Author: React.FC = () => {
 
                 <button
                   onClick={nextSlide}
+                  aria-label="Следующий слайд"
                   className="w-10 h-10 flex items-center justify-center text-primary-800 hover:text-primary-600 hover:bg-primary-50 transition-colors rounded-full"
                 >
                   <ChevronRight size={28} />

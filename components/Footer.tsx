@@ -93,6 +93,7 @@ export const Footer: React.FC = () => {
                                     href="https://wa.me/79260259669"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="WhatsApp"
                                     className="w-10 h-10 bg-primary-800 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors"
                                 >
                                     <MessageCircle size={18} className="text-white" />
@@ -101,6 +102,7 @@ export const Footer: React.FC = () => {
                                     href="https://t.me/Sofia_Rumi"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="Telegram"
                                     className="w-10 h-10 bg-sky-600 rounded-full flex items-center justify-center hover:bg-sky-500 transition-colors"
                                 >
                                     <Send size={18} className="text-white" />
@@ -109,7 +111,7 @@ export const Footer: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="border-t border-stone-800 pt-8 text-center text-xs opacity-50">
+                    <div className="border-t border-stone-800 pt-8 text-center text-xs text-stone-400">
                         <p>&copy; {new Date().getFullYear()} Sofi Rumi. Все права защищены.</p>
                     </div>
                 </div>

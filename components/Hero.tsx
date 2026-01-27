@@ -30,6 +30,7 @@ export const Hero: React.FC = () => {
             loop
             muted
             playsInline
+            aria-label="Видео санатория Первая линия"
             className="w-full aspect-video md:aspect-auto md:h-full md:object-cover"
           />
           {/* Gradient overlay for smooth transition */}
