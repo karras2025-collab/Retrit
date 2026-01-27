@@ -87,7 +87,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
                 capture: true,
                 confirmation: {
                     type: "redirect",
-                    return_url: `${siteUrl}/payment-success.html`,
+                    return_url: `${siteUrl}/payment-result.html`,
                 },
                 description: `Ретрит "Возрождение" - ${selectedDate}`,
                 metadata: {

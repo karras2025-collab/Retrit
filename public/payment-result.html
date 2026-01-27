@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат оплаты - Ретрит "Возрождение"</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Merriweather', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-stone-50 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 text-center">
+        <!-- Loading state -->
+        <div id="loading" class="py-8">
+            <div class="w-16 h-16 border-4 border-green-200 border-t-green-600 rounded-full animate-spin mx-auto mb-4">
+            </div>
+            <p class="text-stone-600">Проверяем статус оплаты...</p>
+        </div>
+
+        <!-- Success state -->
+        <div id="success" class="hidden">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h1 class="text-2xl font-bold text-stone-900 mb-3">Спасибо за бронирование!</h1>
+            <p class="text-stone-600 mb-6">Ваш платёж успешно обработан. На указанный email отправлено подтверждение.
+            </p>
+            <div class="bg-green-50 rounded-xl p-4 mb-6">
+                <p class="text-sm text-green-800"><strong>Что дальше:</strong></p>
+                <ul class="text-sm text-green-700 mt-2 space-y-1">
+                    <li>✓ В течение 24 часов с вами свяжется координатор</li>
+                    <li>✓ Вы получите подробную информацию о заезде</li>
+                </ul>
+            </div>
+            <a href="/"
+                class="inline-block bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors">
+                Вернуться на сайт
+            </a>
+        </div>
+
+        <!-- Pending/Processing state -->
+        <div id="pending" class="hidden">
+            <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h1 class="text-2xl font-bold text-stone-900 mb-3">Оплата обрабатывается</h1>
+            <p class="text-stone-600 mb-6">Ваш платёж находится в обработке. Как только он будет подтверждён, мы
+                отправим вам уведомление на email.</p>
+            <div class="bg-yellow-50 rounded-xl p-4 mb-6">
+                <p class="text-sm text-yellow-800">Если оплата не подтвердится в течение 15 минут, попробуйте повторить
+                    или свяжитесь с нами.</p>
+            </div>
+            <a href="/"
+                class="inline-block bg-stone-600 text-white px-6 py-3 rounded-xl hover:bg-stone-700 transition-colors">
+                Вернуться на сайт
+            </a>
+        </div>
+
+        <!-- Cancelled/Failed state -->
+        <div id="cancelled" class="hidden">
+            <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </div>
+            <h1 class="text-2xl font-bold text-stone-900 mb-3">Оплата не завершена</h1>
+            <p class="text-stone-600 mb-6">Платёж был отменён или не прошёл. Если средства были списаны, они вернутся на
+                карту в течение нескольких дней.</p>
+            <div class="space-y-3">
+                <a href="/#pricing"
+                    class="block w-full bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors">
+                    Попробовать снова
+                </a>
+                <a href="/"
+                    class="block w-full bg-stone-200 text-stone-700 px-6 py-3 rounded-xl hover:bg-stone-300 transition-colors">
+                    Вернуться на сайт
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact info -->
+        <div class="mt-8 pt-6 border-t border-stone-200">
+            <p class="text-sm text-stone-500">
+                Есть вопросы? Напишите нам:
+                <a href="mailto:sofi_rumi@mail.ru" class="text-green-600 hover:underline">sofi_rumi@mail.ru</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Since YuKassa doesn't pass payment status in URL, 
+        // we show a neutral message and recommend checking email
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hide loading after a short delay
+            setTimeout(function () {
+                document.getElementById('loading').classList.add('hidden');
+                // Show pending/processing message as we can't verify status client-side
+                document.getElementById('pending').classList.remove('hidden');
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

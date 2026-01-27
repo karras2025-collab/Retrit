@@ -6,22 +6,16 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"]}
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
-# SPA fallback - but not for static files
+# SPA fallback for client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
   force = false
-
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
 
 [[headers]]
   for = "/*"

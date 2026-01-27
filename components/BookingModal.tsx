@@ -205,7 +205,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pri
                             value={formData.name}
                             onChange={handleInputChange}
                             placeholder="Иван Иванов"
-                            className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                            className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-stone-900"
                             required
                         />
                     </div>
@@ -222,7 +222,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pri
                             value={formData.phone}
                             onChange={handlePhoneChange}
                             placeholder="+7 (999) 123-45-67"
-                            className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                            className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-stone-900"
                             required
                         />
                     </div>
@@ -239,7 +239,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pri
                             value={formData.email}
                             onChange={handleInputChange}
                             placeholder="email@example.com"
-                            className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                            className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-stone-900"
                             required
                         />
                     </div>
