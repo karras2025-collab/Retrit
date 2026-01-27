@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Sparkles, Heart, Eye, Star, Gem } from 'lucide-react';
 
 const slides = [
@@ -67,6 +67,15 @@ const slides = [
 export const Author: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Auto-slide every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
@@ -100,11 +109,17 @@ export const Author: React.FC = () => {
 
           {/* Content Slider */}
           <div className="w-full lg:w-3/5">
-            <div className="bg-white rounded-3xl shadow-xl p-8 md:p-10 border border-stone-100 min-h-[450px] flex flex-col">
+            <div
+              className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 h-[520px] flex flex-col"
+              style={{
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02)',
+                transform: 'perspective(1000px) rotateX(1deg)',
+              }}
+            >
 
               {/* Slide Header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center shadow-inner">
                   <Icon className="w-6 h-6 text-primary-700" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-serif text-primary-800">
@@ -112,8 +127,8 @@ export const Author: React.FC = () => {
                 </h3>
               </div>
 
-              {/* Slide Content */}
-              <div className="flex-grow">
+              {/* Slide Content - Fixed height with scroll if needed */}
+              <div className="flex-grow overflow-y-auto pr-2">
                 <p className="text-stone-600 text-base md:text-lg leading-relaxed whitespace-pre-line mb-4">
                   {slide.content}
                 </p>
@@ -134,9 +149,9 @@ export const Author: React.FC = () => {
                 )}
 
                 {slide.stats && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
                     {slide.stats.map((stat, idx) => (
-                      <div key={idx} className="bg-stone-50 rounded-xl p-4 text-center">
+                      <div key={idx} className="bg-gradient-to-br from-stone-50 to-stone-100 rounded-xl p-3 text-center shadow-sm">
                         <p className="text-sm text-stone-600">{stat}</p>
                       </div>
                     ))}
@@ -144,26 +159,26 @@ export const Author: React.FC = () => {
                 )}
 
                 {slide.formula && (
-                  <div className="bg-gradient-to-r from-primary-100 to-gold-100 rounded-xl p-4 mt-4 text-center">
+                  <div className="bg-gradient-to-r from-primary-100 to-gold-100 rounded-xl p-4 mt-4 text-center shadow-sm">
                     <p className="text-primary-800 font-bold text-lg">{slide.formula}</p>
                   </div>
                 )}
 
                 {slide.quote && (
-                  <blockquote className="border-l-4 border-gold-400 pl-4 mt-4 italic text-stone-700">
+                  <blockquote className="border-l-4 border-gold-400 pl-4 mt-4 italic text-stone-700 bg-stone-50 py-2 rounded-r-lg">
                     {slide.quote}
                   </blockquote>
                 )}
               </div>
 
               {/* Navigation */}
-              <div className="flex items-center justify-between mt-6 pt-6 border-t border-stone-100">
+              <div className="flex items-center justify-between mt-6 pt-5 border-t border-stone-200">
                 <button
                   onClick={prevSlide}
-                  className="flex items-center gap-2 text-stone-500 hover:text-primary-700 transition-colors"
+                  className="flex items-center gap-2 text-stone-500 hover:text-primary-700 transition-colors px-3 py-2 rounded-lg hover:bg-stone-50"
                 >
                   <ChevronLeft size={20} />
-                  <span className="text-sm">Назад</span>
+                  <span className="text-sm font-medium">Назад</span>
                 </button>
 
                 {/* Dots */}
@@ -172,9 +187,9 @@ export const Author: React.FC = () => {
                     <button
                       key={idx}
                       onClick={() => setCurrentSlide(idx)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all ${idx === currentSlide
-                          ? 'bg-primary-600 w-6'
-                          : 'bg-stone-300 hover:bg-stone-400'
+                      className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentSlide
+                          ? 'bg-primary-600 w-8'
+                          : 'bg-stone-300 hover:bg-stone-400 w-2.5'
                         }`}
                     />
                   ))}
@@ -182,9 +197,9 @@ export const Author: React.FC = () => {
 
                 <button
                   onClick={nextSlide}
-                  className="flex items-center gap-2 text-stone-500 hover:text-primary-700 transition-colors"
+                  className="flex items-center gap-2 text-stone-500 hover:text-primary-700 transition-colors px-3 py-2 rounded-lg hover:bg-stone-50"
                 >
-                  <span className="text-sm">Далее</span>
+                  <span className="text-sm font-medium">Далее</span>
                   <ChevronRight size={20} />
                 </button>
               </div>
