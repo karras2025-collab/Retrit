@@ -50,15 +50,19 @@ export const Hero: React.FC = () => {
           <div className="flex gap-4">
             <a
               href="#program"
-              className="min-w-[240px] px-8 py-4 bg-primary-800 text-white text-lg font-semibold rounded-full hover:bg-primary-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center"
+              className="group relative min-w-[240px] px-8 py-4 bg-primary-800 text-white text-lg font-semibold rounded-full hover:bg-primary-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center overflow-hidden"
             >
-              Узнать подробнее
+              <span className="relative z-10">Узнать подробнее</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent rounded-full"></div>
             </a>
             <a
               href="#pricing"
-              className="min-w-[240px] px-8 py-4 bg-gold-400 text-stone-900 text-lg font-semibold rounded-full hover:bg-gold-500 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center"
+              className="group relative min-w-[240px] px-8 py-4 bg-gold-400 text-stone-900 text-lg font-semibold rounded-full hover:bg-gold-500 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center overflow-hidden"
             >
-              Забронировать место
+              <span className="relative z-10">Забронировать место</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent rounded-full"></div>
             </a>
           </div>
         </div>
