@@ -20,6 +20,24 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-stone-50 to-transparent"></div>
       </div>
 
+      {/* Left Logo - Санаторий Первая Линия */}
+      <div className="absolute left-4 md:left-8 lg:left-12 bottom-[20%] z-10">
+        <img
+          src="/logo-sanatorium.jpg"
+          alt="Санаторий Первая Линия"
+          className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain drop-shadow-xl"
+        />
+      </div>
+
+      {/* Right Logo - Sofi Rumi */}
+      <div className="absolute right-4 md:right-8 lg:right-12 bottom-[20%] z-10">
+        <img
+          src="/logo-sofi-rumi.png"
+          alt="Sofi Rumi - Ретритный центр"
+          className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain drop-shadow-xl"
+        />
+      </div>
+
       {/* Scroll Indicator */}
       <div
         onClick={scrollToProgram}
