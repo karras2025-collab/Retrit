@@ -23,27 +23,27 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-primary-900/70 backdrop-blur-sm py-4'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-1' : 'bg-primary-900/70 backdrop-blur-sm py-3'
         }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logos Area */}
           <div className="flex items-center space-x-4 md:space-x-8">
-            {/* Simulating Sanatorium Logo */}
-            <div className="flex flex-col items-center">
-              <div className={`font-serif font-bold tracking-widest leading-tight uppercase ${isScrolled ? 'text-sm text-primary-700' : 'text-base text-white'}`}>
+            {/* Sanatorium Logo */}
+            <a href="https://pervayalinia.ru/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center hover:opacity-80 transition-opacity">
+              <div className={`font-serif font-bold tracking-widest leading-tight uppercase ${isScrolled ? 'text-xs text-primary-700' : 'text-sm text-white'}`}>
                 Первая линия
               </div>
-              <span className={`text-[10px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>Санаторий</span>
-            </div>
+              <span className={`text-[9px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>Санаторий</span>
+            </a>
 
             <div className={`h-8 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
 
             {/* Sofi Rumi Logo */}
             <div className="flex items-center gap-2">
               <div>
-                <div className={`font-serif font-bold leading-none text-sm sm:text-base ${isScrolled ? 'text-stone-800' : 'text-white'}`}>Софии Руми</div>
+                <div className={`font-serif font-bold leading-none text-xs sm:text-sm ${isScrolled ? 'text-stone-800' : 'text-white'}`}>Софи Руми</div>
                 <div className={`text-[8px] sm:text-[9px] uppercase tracking-widest ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>Ретритный центр тела и души</div>
               </div>
             </div>
