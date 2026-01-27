@@ -80,17 +80,6 @@ export const Pricing: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-
-                        <div className="mt-12 bg-primary-700 text-white p-8 rounded-2xl relative overflow-hidden">
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-serif mb-4">Остались вопросы?</h3>
-                                <p className="mb-6 opacity-90">Напишите нам, мы поможем подобрать удобные даты и расскажем подробнее о проживании.</p>
-                                <a href={`mailto:${CONTACTS.email}`} className="text-gold-300 hover:text-white underline transition-colors">
-                                    {CONTACTS.email}
-                                </a>
-                            </div>
-                            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-                        </div>
                     </div>
 
                 </div>
