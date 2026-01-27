@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SCHEDULE } from '../constants';
-import { Users, Gift, Target, Sparkles, Check, Heart, Brain, Smile, Shield, MapPin, MessageCircle } from 'lucide-react';
+import { Users, Gift, Target, Sparkles, Check, Heart, Brain, Smile, Shield, MapPin, MessageCircle, Home, Utensils, Stethoscope, Leaf, Activity, Moon } from 'lucide-react';
 
 const targetAudience = [
     "Женщины и мужчины от 25 лет",
@@ -32,6 +32,61 @@ const results = [
     { icon: Heart, text: "Обретёте душевное и телесное спокойствие" }
 ];
 
+const includedSections = [
+    {
+        icon: Home,
+        title: "Пространство для восстановления",
+        items: [
+            "Проживание в комфортабельном двухместном номере",
+            "Трёхразовое сбалансированное питание"
+        ]
+    },
+    {
+        icon: Stethoscope,
+        title: "Профессиональное сопровождение",
+        items: [
+            "Консультация эндокринолога",
+            "Консультация невропатолога",
+            "Приём терапевта",
+            "Сеанс репродуктолога",
+            "Персональная коуч-сессия"
+        ]
+    },
+    {
+        icon: Activity,
+        title: "Телесные практики обновления",
+        items: [
+            "Жемчужная ванна",
+            "Озоновая процедура",
+            "Энергетический массаж тела"
+        ]
+    },
+    {
+        icon: Brain,
+        title: "Психоэмоциональная трансформация",
+        items: [
+            "Ежедневные медитации и практики осознанности",
+            "Авторский курс «Осознанное счастье»",
+            "Эксклюзивные методические материалы"
+        ]
+    },
+    {
+        icon: Moon,
+        title: "Ритуалы глубокой перезагрузки",
+        items: [
+            "Вечерние прогулки на природе",
+            "Пространство тишины и поддержки"
+        ]
+    }
+];
+
+const finalResults = [
+    "чувствуют лёгкость в теле и ясность в голове",
+    "восстанавливают энергию и эмоциональный баланс",
+    "получают новые стратегии жизни и внутреннюю опору",
+    "выходят с ощущением «Я заново родился/родилась»"
+];
+
 export const Program: React.FC = () => {
     const [activeDay, setActiveDay] = useState<number | null>(1);
 
@@ -48,15 +103,73 @@ export const Program: React.FC = () => {
 
                 {/* Main Title */}
                 <div className="text-center mb-16 max-w-4xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-primary-800 mb-6">
-                        Трансформационный ретрит «Возрождение»
+                    <span className="text-4xl mb-4 block">🌿</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-primary-800 mb-4">
+                        Трансформационный ретрит
                     </h2>
+                    <h3 className="text-3xl md:text-4xl font-serif text-gold-600 mb-6">
+                        «ВОЗРОЖДЕНИЕ» в Санатории Первая линия
+                    </h3>
                     <p className="text-xl md:text-2xl text-stone-600 leading-relaxed">
-                        Уникальное сочетание санаторно-курортного лечения, оздоровительных процедур и глубоких энергетических практик
+                        Путешествие к телесному здоровью, эмоциональной гармонии и новой жизненной энергии.
+                        Это не просто отдых — это мягкая, глубокая перезагрузка тела, психики и жизненного сценария.
                     </p>
                 </div>
 
-                {/* Cards Grid */}
+                {/* What's Included - 5 Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                    {includedSections.map((section, idx) => {
+                        const Icon = section.icon;
+                        return (
+                            <div
+                                key={idx}
+                                className="bg-white rounded-3xl p-8 border border-stone-200 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1"
+                                style={{
+                                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 12px 24px -8px rgba(0, 0, 0, 0.08)',
+                                }}
+                            >
+                                <div className="flex items-center gap-4 mb-5">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center shadow-inner">
+                                        <Icon className="w-6 h-6 text-primary-700" />
+                                    </div>
+                                    <h4 className="text-xl font-serif text-primary-800">{section.title}</h4>
+                                </div>
+                                <ul className="space-y-2">
+                                    {section.items.map((item, itemIdx) => (
+                                        <li key={itemIdx} className="flex items-start gap-2 text-base text-stone-600">
+                                            <span className="w-1.5 h-1.5 bg-gold-500 rounded-full mt-2 shrink-0"></span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Results After Retreat */}
+                <div
+                    className="bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 md:p-12 mb-16 border border-primary-100"
+                    style={{
+                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.08), 0 12px 24px -8px rgba(0, 0, 0, 0.05)',
+                    }}
+                >
+                    <div className="text-center mb-8">
+                        <span className="text-3xl mb-3 block">🌸</span>
+                        <h3 className="text-3xl md:text-4xl font-serif text-primary-800">Результат ретрита «Возрождение»</h3>
+                        <p className="text-lg text-stone-600 mt-2">После программы участники:</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                        {finalResults.map((result, idx) => (
+                            <div key={idx} className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
+                                <Sparkles className="w-5 h-5 text-gold-500 shrink-0" />
+                                <span className="text-lg text-stone-700">{result}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Cards Grid - For Whom & Results */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
 
                     {/* For Whom Card */}
@@ -82,7 +195,7 @@ export const Program: React.FC = () => {
                         </ul>
                     </div>
 
-                    {/* Results Card */}
+                    {/* 10-Day Results Card */}
                     <div
                         className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1"
                         style={{
@@ -96,15 +209,12 @@ export const Program: React.FC = () => {
                             <h3 className="text-2xl md:text-3xl font-serif text-primary-800">🎯 Результат за 10 дней</h3>
                         </div>
                         <ul className="space-y-3">
-                            {results.map((item, idx) => {
-                                const Icon = item.icon;
-                                return (
-                                    <li key={idx} className="flex items-start gap-3 text-lg text-stone-600">
-                                        <Check className="w-5 h-5 text-primary-600 mt-1 shrink-0" />
-                                        {item.text}
-                                    </li>
-                                );
-                            })}
+                            {results.map((item, idx) => (
+                                <li key={idx} className="flex items-start gap-3 text-lg text-stone-600">
+                                    <Check className="w-5 h-5 text-primary-600 mt-1 shrink-0" />
+                                    {item.text}
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
