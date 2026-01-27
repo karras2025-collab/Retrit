@@ -9,10 +9,12 @@ import { Reviews } from './components/Reviews';
 import { Pricing } from './components/Pricing';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
+import { BackgroundAnimation } from './components/BackgroundAnimation';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="min-h-screen flex flex-col bg-cream relative">
+      <BackgroundAnimation />
       <Header />
       <main className="flex-grow">
         <Hero />
