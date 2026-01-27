@@ -190,7 +190,7 @@ export const Author: React.FC = () => {
                   {slides.map((_, idx) => (
                     <button
                       key={idx}
-                      onClick={() => setCurrentSlide(idx)}
+                      onClick={() => changeSlide(idx)}
                       className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentSlide
                         ? 'bg-primary-600 w-8'
                         : 'bg-stone-300 hover:bg-stone-400 w-2.5'
