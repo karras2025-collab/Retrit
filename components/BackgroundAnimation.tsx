@@ -33,14 +33,14 @@ export const BackgroundAnimation: React.FC = () => {
         }
 
         const stars: Star[] = [];
-        const maxStars = 80;
+        const maxStars = 40; // Reduced by 50%
 
         const createStar = (): Star => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             size: Math.random() * 4 + 2,
             opacity: 0,
-            fadeSpeed: Math.random() * 0.015 + 0.008,
+            fadeSpeed: (Math.random() * 0.015 + 0.008) / 3, // Slowed 3x
             growing: true,
             rotation: Math.random() * Math.PI * 2
         });
