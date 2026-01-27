@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Sparkles, Heart, Eye, Star, Gem } from 'lucide-react';
 
 const slides = [
@@ -66,13 +66,23 @@ const slides = [
 
 export const Author: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const changeSlide = useCallback((newSlide: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentSlide(newSlide);
+      setTimeout(() => setIsTransitioning(false), 50);
+    }, 300);
+  }, [isTransitioning]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    changeSlide((currentSlide + 1) % slides.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    changeSlide((currentSlide - 1 + slides.length) % slides.length);
   };
 
   const slide = slides[currentSlide];
@@ -109,57 +119,61 @@ export const Author: React.FC = () => {
             >
 
               {/* Slide Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center shadow-inner">
-                  <Icon className="w-6 h-6 text-primary-700" />
+              <div
+                className={`transition-all duration-300 ease-out ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center shadow-inner">
+                    <Icon className="w-6 h-6 text-primary-700" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-serif text-primary-800">
+                    {slide.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-primary-800">
-                  {slide.title}
-                </h3>
-              </div>
 
-              {/* Slide Content - Fixed height with scroll if needed */}
-              <div className="flex-grow overflow-y-auto pr-2">
-                <p className="text-stone-600 text-base md:text-lg leading-relaxed whitespace-pre-line mb-4">
-                  {slide.content}
-                </p>
+                {/* Slide Content - Fixed height with scroll if needed */}
+                <div className="flex-grow overflow-y-auto pr-2">
+                  <p className="text-stone-600 text-base md:text-lg leading-relaxed whitespace-pre-line mb-4">
+                    {slide.content}
+                  </p>
 
-                {slide.list && (
-                  <ul className="space-y-2 mb-4">
-                    {slide.list.map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-stone-600">
-                        <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                  {slide.list && (
+                    <ul className="space-y-2 mb-4">
+                      {slide.list.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-stone-600">
+                          <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
-                {slide.footer && (
-                  <p className="text-primary-700 font-medium italic mt-4">{slide.footer}</p>
-                )}
+                  {slide.footer && (
+                    <p className="text-primary-700 font-medium italic mt-4">{slide.footer}</p>
+                  )}
 
-                {slide.stats && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
-                    {slide.stats.map((stat, idx) => (
-                      <div key={idx} className="bg-gradient-to-br from-stone-50 to-stone-100 rounded-xl p-3 text-center shadow-sm">
-                        <p className="text-sm text-stone-600">{stat}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                  {slide.stats && (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+                      {slide.stats.map((stat, idx) => (
+                        <div key={idx} className="bg-gradient-to-br from-stone-50 to-stone-100 rounded-xl p-3 text-center shadow-sm">
+                          <p className="text-sm text-stone-600">{stat}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
-                {slide.formula && (
-                  <div className="bg-primary-100 rounded-xl p-4 mt-4 text-center shadow-sm">
-                    <p className="text-primary-800 font-bold text-lg">{slide.formula}</p>
-                  </div>
-                )}
+                  {slide.formula && (
+                    <div className="bg-primary-100 rounded-xl p-4 mt-4 text-center shadow-sm">
+                      <p className="text-primary-800 font-bold text-lg">{slide.formula}</p>
+                    </div>
+                  )}
 
-                {slide.quote && (
-                  <blockquote className="border-l-4 border-gold-400 pl-4 mt-4 italic text-stone-700 bg-stone-50 py-2 rounded-r-lg">
-                    {slide.quote}
-                  </blockquote>
-                )}
+                  {slide.quote && (
+                    <blockquote className="border-l-4 border-gold-400 pl-4 mt-4 italic text-stone-700 bg-stone-50 py-2 rounded-r-lg">
+                      {slide.quote}
+                    </blockquote>
+                  )}
+                </div>
               </div>
 
               {/* Navigation */}
