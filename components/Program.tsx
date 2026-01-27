@@ -116,59 +116,6 @@ export const Program: React.FC = () => {
                     </p>
                 </div>
 
-                {/* What's Included - 5 Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                    {includedSections.map((section, idx) => {
-                        const Icon = section.icon;
-                        return (
-                            <div
-                                key={idx}
-                                className="bg-white rounded-3xl p-8 border border-stone-200 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1"
-                                style={{
-                                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 12px 24px -8px rgba(0, 0, 0, 0.08)',
-                                }}
-                            >
-                                <div className="flex items-center gap-4 mb-5">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center shadow-inner">
-                                        <Icon className="w-6 h-6 text-primary-700" />
-                                    </div>
-                                    <h4 className="text-xl font-serif text-primary-800">{section.title}</h4>
-                                </div>
-                                <ul className="space-y-2">
-                                    {section.items.map((item, itemIdx) => (
-                                        <li key={itemIdx} className="flex items-start gap-2 text-base text-stone-600">
-                                            <span className="w-1.5 h-1.5 bg-gold-500 rounded-full mt-2 shrink-0"></span>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {/* Results After Retreat */}
-                <div
-                    className="bg-gradient-to-br from-primary-50 to-white rounded-3xl p-8 md:p-12 mb-16 border border-primary-100"
-                    style={{
-                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.08), 0 12px 24px -8px rgba(0, 0, 0, 0.05)',
-                    }}
-                >
-                    <div className="text-center mb-8">
-                        <span className="text-3xl mb-3 block">🌸</span>
-                        <h3 className="text-3xl md:text-4xl font-serif text-primary-800">Результат ретрита «Возрождение»</h3>
-                        <p className="text-lg text-stone-600 mt-2">После программы участники:</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-                        {finalResults.map((result, idx) => (
-                            <div key={idx} className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
-                                <Sparkles className="w-5 h-5 text-gold-500 shrink-0" />
-                                <span className="text-lg text-stone-700">{result}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
                 {/* Cards Grid - For Whom & Results */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
 
