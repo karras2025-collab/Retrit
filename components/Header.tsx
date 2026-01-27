@@ -23,70 +23,81 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-0.5' : 'bg-primary-900/70 backdrop-blur-sm py-2'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-primary-900/80 backdrop-blur-sm'}`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center h-14">
           {/* Logos Area */}
-          <div className="flex items-center space-x-4 md:space-x-8">
+          <div className="flex items-center gap-6">
             {/* Sanatorium Logo */}
-            <a href="https://pervayalinia.ru/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center hover:opacity-80 transition-opacity">
-              <div className={`font-serif font-bold tracking-widest leading-tight uppercase ${isScrolled ? 'text-xs text-primary-700' : 'text-sm text-white'}`}>
-                Первая линия
-              </div>
-              <span className={`text-[9px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>Санаторий</span>
+            <a
+              href="https://pervayalinia.ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center hover:opacity-80 transition-opacity"
+            >
+              <span className={`font-serif font-bold tracking-widest uppercase text-xs ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+                ПЕРВАЯ ЛИНИЯ
+              </span>
+              <span className={`text-[8px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+                Санаторий
+              </span>
             </a>
 
-            <div className={`h-8 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
+            <div className={`h-6 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
 
             {/* Sofi Rumi Logo */}
-            <div className="flex flex-col items-center">
-              <div className={`font-serif font-bold tracking-widest leading-tight uppercase ${isScrolled ? 'text-xs text-primary-700' : 'text-sm text-white'}`}>
+            <div className="flex flex-col items-center justify-center">
+              <span className={`font-serif font-bold tracking-widest uppercase text-xs ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 СОФИ РУМИ
-              </div>
-              <span className={`text-[9px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>Ретритный центр</span>
+              </span>
+              <span className={`text-[8px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+                Ретритный центр
+              </span>
             </div>
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-stone-700 hover:text-primary-600' : 'text-white/90 hover:text-white'}`}
+                className={`text-xs font-medium uppercase tracking-wide transition-colors ${isScrolled ? 'text-stone-700 hover:text-primary-600' : 'text-white/90 hover:text-white'}`}
               >
                 {link.name}
               </a>
             ))}
+
+            <div className={`h-4 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
+
             <a
               href="tel:89260259669"
-              className={`flex items-center gap-2 font-semibold text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}
+              className={`flex items-center gap-1.5 font-semibold text-xs ${isScrolled ? 'text-primary-700' : 'text-white'}`}
             >
-              <Phone size={14} />
+              <Phone size={12} />
               <span>+7 (926) 025-96-69</span>
             </a>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 ${isScrolled ? 'text-stone-700' : 'text-white'}`}
+            className={`lg:hidden p-2 ${isScrolled ? 'text-stone-700' : 'text-white'}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-stone-100 py-4 px-4 flex flex-col space-y-4">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-stone-100 py-3 px-4 flex flex-col space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-stone-800 text-lg font-medium block py-2 border-b border-stone-100"
+              className="text-stone-800 text-sm font-medium block py-2 border-b border-stone-100"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
@@ -94,9 +105,9 @@ export const Header: React.FC = () => {
           ))}
           <a
             href="tel:89260259669"
-            className="text-primary-700 font-bold block py-2"
+            className="text-primary-700 font-bold text-sm block py-2"
           >
-            Позвонить
+            +7 (926) 025-96-69
           </a>
         </div>
       )}
