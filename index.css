@@ -1,11 +1,11 @@
 /* GreenFlow Light Theme */
 :root {
-    /* Primary - Olive Green (buttons, accents) */
-    --color-primary-900: #5a6b45;
-    --color-primary-800: #6b7d52;
-    --color-primary-700: #7A8B5C;
-    --color-primary-600: #8B9A6B;
-    --color-primary-500: #9DAA7E;
+    /* Primary - Dark Forest Green (from logo) */
+    --color-primary-900: #0a2819;
+    --color-primary-800: #0d3320;
+    --color-primary-700: #124028;
+    --color-primary-600: #185033;
+    --color-primary-500: #1f6040;
 
     /* Background - White/Cream */
     --color-bg-white: #FFFFFF;
