@@ -40,7 +40,7 @@ export const BackgroundAnimation: React.FC = () => {
             y: Math.random() * canvas.height,
             size: Math.random() * 4 + 2,
             opacity: 0,
-            fadeSpeed: (Math.random() * 0.015 + 0.008) / 3, // Slowed 3x
+            fadeSpeed: (Math.random() * 0.015 + 0.008) / 6, // Slowed 50% more
             growing: true,
             rotation: Math.random() * Math.PI * 2
         });
