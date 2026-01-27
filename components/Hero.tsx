@@ -45,8 +45,8 @@ export const Hero: React.FC = () => {
           {isMuted ? <VolumeX size={20} className="md:w-6 md:h-6" /> : <Volume2 size={20} className="md:w-6 md:h-6" />}
         </button>
 
-        {/* CTA Buttons */}
-        <div className="absolute inset-0 z-10 flex items-end justify-center pb-[18%] md:pb-[13%]">
+        {/* CTA Buttons - Desktop only */}
+        <div className="absolute inset-0 z-10 hidden md:flex items-end justify-center pb-[13%]">
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#program"
