@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { About } from './components/About';
 import { Author } from './components/Author';
 import { Program } from './components/Program';
 import { Gallery } from './components/Gallery';
@@ -15,7 +14,6 @@ function App() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <About />
         <Program />
         <Author />
         <Gallery />
