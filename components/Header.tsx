@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-1' : 'bg-primary-900/70 backdrop-blur-sm py-3'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-0.5' : 'bg-primary-900/70 backdrop-blur-sm py-2'
         }`}
     >
       <div className="container mx-auto px-4">
@@ -41,11 +41,11 @@ export const Header: React.FC = () => {
             <div className={`h-8 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
 
             {/* Sofi Rumi Logo */}
-            <div className="flex items-center gap-2">
-              <div>
-                <div className={`font-serif font-bold leading-none text-xs sm:text-sm ${isScrolled ? 'text-stone-800' : 'text-white'}`}>Софи Руми</div>
-                <div className={`text-[8px] sm:text-[9px] uppercase tracking-widest ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>Ретритный центр тела и души</div>
+            <div className="flex flex-col items-center">
+              <div className={`font-serif font-bold tracking-widest leading-tight uppercase ${isScrolled ? 'text-xs text-primary-700' : 'text-sm text-white'}`}>
+                СОФИ РУМИ
               </div>
+              <span className={`text-[9px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>Ретритный центр</span>
             </div>
           </div>
 
@@ -62,9 +62,9 @@ export const Header: React.FC = () => {
             ))}
             <a
               href="tel:89260259669"
-              className={`flex items-center gap-2 font-semibold ${isScrolled ? 'text-primary-700' : 'text-white'}`}
+              className={`flex items-center gap-2 font-semibold text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}
             >
-              <Phone size={16} />
+              <Phone size={14} />
               <span>+7 (926) 025-96-69</span>
             </a>
           </nav>
