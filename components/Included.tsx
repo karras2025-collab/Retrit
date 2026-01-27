@@ -59,19 +59,6 @@ export const Included: React.FC = () => {
         <section className="py-24 bg-gradient-to-b from-stone-50 to-white">
             <div className="container mx-auto px-4">
 
-                {/* Header */}
-                <div className="text-center mb-16 max-w-4xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-primary-800 mb-6">
-                        Трансформационный ретрит
-                    </h2>
-                    <p className="text-xl md:text-2xl text-stone-600 leading-relaxed mb-4">
-                        Путешествие к телесному здоровью, эмоциональной гармонии и новой жизненной энергии
-                    </p>
-                    <p className="text-lg md:text-xl text-primary-700 font-medium italic">
-                        «Возрождение» — это не просто отдых. Это мягкая, глубокая перезагрузка тела, психики и жизненного сценария.
-                    </p>
-                </div>
-
                 {/* Section Title */}
                 <div className="text-center mb-12">
                     <span className="text-3xl">✨</span>
