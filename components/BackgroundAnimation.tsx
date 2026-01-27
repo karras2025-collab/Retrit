@@ -21,33 +21,75 @@ export const BackgroundAnimation: React.FC = () => {
         // Gold color with transparency
         const goldColor = 'rgba(212, 175, 55, ';
 
-        // Sparkles
-        interface Sparkle {
+        // Stars (sparkles in star shape)
+        interface Star {
             x: number;
             y: number;
             size: number;
             opacity: number;
             fadeSpeed: number;
             growing: boolean;
+            rotation: number;
         }
 
-        const sparkles: Sparkle[] = [];
-        const maxSparkles = 30;
+        const stars: Star[] = [];
+        const maxStars = 80; // Increased from 30
 
-        const createSparkle = (): Sparkle => ({
+        const createStar = (): Star => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            size: Math.random() * 2 + 1,
+            size: Math.random() * 4 + 2, // Bigger stars
             opacity: 0,
-            fadeSpeed: Math.random() * 0.01 + 0.005,
-            growing: true
+            fadeSpeed: Math.random() * 0.015 + 0.008,
+            growing: true,
+            rotation: Math.random() * Math.PI * 2
         });
 
-        for (let i = 0; i < maxSparkles; i++) {
-            const sparkle = createSparkle();
-            sparkle.opacity = Math.random() * 0.15;
-            sparkles.push(sparkle);
+        for (let i = 0; i < maxStars; i++) {
+            const star = createStar();
+            star.opacity = Math.random() * 0.3;
+            stars.push(star);
         }
+
+        // Draw star shape
+        const drawStar = (x: number, y: number, size: number, opacity: number, rotation: number) => {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(rotation);
+
+            // Draw 4-pointed star
+            ctx.beginPath();
+            const spikes = 4;
+            const outerRadius = size;
+            const innerRadius = size * 0.4;
+
+            for (let i = 0; i < spikes * 2; i++) {
+                const radius = i % 2 === 0 ? outerRadius : innerRadius;
+                const angle = (i * Math.PI) / spikes;
+                const px = Math.cos(angle) * radius;
+                const py = Math.sin(angle) * radius;
+
+                if (i === 0) {
+                    ctx.moveTo(px, py);
+                } else {
+                    ctx.lineTo(px, py);
+                }
+            }
+            ctx.closePath();
+            ctx.fillStyle = goldColor + opacity + ')';
+            ctx.fill();
+
+            // Draw glow
+            const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, size * 3);
+            gradient.addColorStop(0, goldColor + (opacity * 0.6) + ')');
+            gradient.addColorStop(1, goldColor + '0)');
+            ctx.beginPath();
+            ctx.arc(0, 0, size * 3, 0, Math.PI * 2);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+
+            ctx.restore();
+        };
 
         // Threads (thin golden lines)
         interface Thread {
@@ -61,7 +103,7 @@ export const BackgroundAnimation: React.FC = () => {
         }
 
         const threads: Thread[] = [];
-        const maxThreads = 8;
+        const maxThreads = 25; // Increased from 8
 
         const createThread = (): Thread => {
             const horizontal = Math.random() > 0.5;
@@ -71,9 +113,9 @@ export const BackgroundAnimation: React.FC = () => {
                     startX: 0,
                     startY: y,
                     endX: canvas.width,
-                    endY: y + (Math.random() - 0.5) * 100,
+                    endY: y + (Math.random() - 0.5) * 150,
                     opacity: 0,
-                    fadeSpeed: Math.random() * 0.003 + 0.001,
+                    fadeSpeed: Math.random() * 0.005 + 0.002,
                     growing: true
                 };
             } else {
@@ -81,10 +123,10 @@ export const BackgroundAnimation: React.FC = () => {
                 return {
                     startX: x,
                     startY: 0,
-                    endX: x + (Math.random() - 0.5) * 100,
+                    endX: x + (Math.random() - 0.5) * 150,
                     endY: canvas.height,
                     opacity: 0,
-                    fadeSpeed: Math.random() * 0.003 + 0.001,
+                    fadeSpeed: Math.random() * 0.005 + 0.002,
                     growing: true
                 };
             }
@@ -92,7 +134,7 @@ export const BackgroundAnimation: React.FC = () => {
 
         for (let i = 0; i < maxThreads; i++) {
             const thread = createThread();
-            thread.opacity = Math.random() * 0.08;
+            thread.opacity = Math.random() * 0.15;
             threads.push(thread);
         }
 
@@ -100,38 +142,26 @@ export const BackgroundAnimation: React.FC = () => {
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Draw and update sparkles
-            sparkles.forEach((sparkle, index) => {
+            // Draw and update stars
+            stars.forEach((star, index) => {
                 // Update opacity
-                if (sparkle.growing) {
-                    sparkle.opacity += sparkle.fadeSpeed;
-                    if (sparkle.opacity >= 0.2) {
-                        sparkle.growing = false;
+                if (star.growing) {
+                    star.opacity += star.fadeSpeed;
+                    if (star.opacity >= 0.4) { // More visible
+                        star.growing = false;
                     }
                 } else {
-                    sparkle.opacity -= sparkle.fadeSpeed;
-                    if (sparkle.opacity <= 0) {
-                        sparkles[index] = createSparkle();
+                    star.opacity -= star.fadeSpeed;
+                    if (star.opacity <= 0) {
+                        stars[index] = createStar();
                     }
                 }
 
-                // Draw sparkle
-                ctx.beginPath();
-                ctx.arc(sparkle.x, sparkle.y, sparkle.size, 0, Math.PI * 2);
-                ctx.fillStyle = goldColor + sparkle.opacity + ')';
-                ctx.fill();
+                // Slowly rotate
+                star.rotation += 0.01;
 
-                // Draw glow
-                const gradient = ctx.createRadialGradient(
-                    sparkle.x, sparkle.y, 0,
-                    sparkle.x, sparkle.y, sparkle.size * 4
-                );
-                gradient.addColorStop(0, goldColor + (sparkle.opacity * 0.5) + ')');
-                gradient.addColorStop(1, goldColor + '0)');
-                ctx.beginPath();
-                ctx.arc(sparkle.x, sparkle.y, sparkle.size * 4, 0, Math.PI * 2);
-                ctx.fillStyle = gradient;
-                ctx.fill();
+                // Draw star
+                drawStar(star.x, star.y, star.size, star.opacity, star.rotation);
             });
 
             // Draw and update threads
@@ -139,7 +169,7 @@ export const BackgroundAnimation: React.FC = () => {
                 // Update opacity
                 if (thread.growing) {
                     thread.opacity += thread.fadeSpeed;
-                    if (thread.opacity >= 0.1) {
+                    if (thread.opacity >= 0.2) { // More visible
                         thread.growing = false;
                     }
                 } else {
