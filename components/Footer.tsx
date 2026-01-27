@@ -39,8 +39,10 @@ export const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Информация</h4>
                         <ul className="space-y-2 text-sm">
+                            <li><a href="/offer.html" className="hover:text-white transition-colors">Публичная оферта</a></li>
                             <li><a href="/privacy.html" className="hover:text-white transition-colors">Политика конфиденциальности</a></li>
                             <li><a href="/consent.html" className="hover:text-white transition-colors">Согласие на обработку данных</a></li>
+                            <li><a href="/messaging-consent.html" className="hover:text-white transition-colors">Согласие на рассылку</a></li>
                         </ul>
                     </div>
 
