@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative h-[52vh] md:h-[60vh] flex items-end overflow-hidden mt-24">
+    <section className="relative flex items-end overflow-hidden pt-24" style={{ height: 'calc(100vh - 0px)' }}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
