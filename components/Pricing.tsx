@@ -40,8 +40,8 @@ export const Pricing: React.FC = () => {
                                     "Сопровождение кураторов"
                                 ].map((feature, idx) => (
                                     <li key={idx} className="flex items-center gap-3">
-                                        <div className="bg-green-100 rounded-full p-1">
-                                            <Check size={14} className="text-green-600" />
+                                        <div className="bg-primary-100 rounded-full p-1">
+                                            <Check size={14} className="text-primary-800" />
                                         </div>
                                         <span className="text-stone-700">{feature}</span>
                                     </li>

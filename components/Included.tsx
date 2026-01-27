@@ -81,7 +81,7 @@ export const Included: React.FC = () => {
                             >
                                 {/* Card Header */}
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-14 h-14 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
+                                    <div className="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
                                         <span className="text-2xl">{section.emoji}</span>
                                     </div>
                                     <h4 className="text-xl md:text-2xl font-serif text-primary-800 leading-tight">

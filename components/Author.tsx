@@ -110,7 +110,7 @@ export const Author: React.FC = () => {
 
               {/* Slide Header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center shadow-inner">
+                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center shadow-inner">
                   <Icon className="w-6 h-6 text-primary-700" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-serif text-primary-800">
@@ -150,7 +150,7 @@ export const Author: React.FC = () => {
                 )}
 
                 {slide.formula && (
-                  <div className="bg-gradient-to-r from-primary-100 to-gold-100 rounded-xl p-4 mt-4 text-center shadow-sm">
+                  <div className="bg-primary-100 rounded-xl p-4 mt-4 text-center shadow-sm">
                     <p className="text-primary-800 font-bold text-lg">{slide.formula}</p>
                   </div>
                 )}

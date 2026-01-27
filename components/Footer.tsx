@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
                             href="https://wa.me/79260259669"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+                            className="inline-flex items-center justify-center gap-3 bg-primary-800 hover:bg-primary-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
                         >
                             <MessageCircle size={24} />
                             WhatsApp
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
                                     href="https://wa.me/79260259669"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors"
+                                    className="w-10 h-10 bg-primary-800 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors"
                                 >
                                     <MessageCircle size={18} className="text-white" />
                                 </a>

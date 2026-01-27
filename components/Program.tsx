@@ -127,7 +127,7 @@ export const Program: React.FC = () => {
                         }}
                     >
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-14 h-14 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center shadow-inner">
+                            <div className="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center shadow-inner">
                                 <Users className="w-7 h-7 text-primary-700" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-serif text-primary-800">Для кого</h3>
@@ -169,7 +169,7 @@ export const Program: React.FC = () => {
 
                 {/* Bonus Card - Full Width */}
                 <div
-                    className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-3xl p-8 md:p-12 mb-16 text-white transition-all duration-500 hover:scale-[1.01]"
+                    className="bg-primary-800 rounded-3xl p-8 md:p-12 mb-16 text-white transition-all duration-500 hover:scale-[1.01]"
                     style={{
                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 12px 24px -8px rgba(0, 0, 0, 0.15)',
                     }}
@@ -196,7 +196,7 @@ export const Program: React.FC = () => {
                     <a
                         href="/10-дневная офлайн-программа в санатории может быть очень глубокой трансформацией для участников.pdf"
                         download
-                        className="inline-flex items-center gap-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-10 py-5 rounded-2xl text-xl md:text-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+                        className="inline-flex items-center gap-4 bg-primary-800 hover:bg-primary-700 text-white px-10 py-5 rounded-2xl text-xl md:text-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
                         style={{
                             boxShadow: '0 20px 40px -10px rgba(34, 87, 70, 0.4)',
                         }}

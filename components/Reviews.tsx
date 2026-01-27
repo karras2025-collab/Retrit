@@ -36,7 +36,7 @@ export const Reviews: React.FC = () => {
                             </p>
 
                             <div className="flex items-center gap-4 pt-6 border-t border-stone-200">
-                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-primary-700 font-bold text-xl">
+                                <div className="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-xl">
                                     {review.name.charAt(0)}
                                 </div>
                                 <div>
