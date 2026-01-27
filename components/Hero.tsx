@@ -47,16 +47,16 @@ export const Hero: React.FC = () => {
 
         {/* CTA Buttons - Desktop only */}
         <div className="absolute inset-0 z-10 hidden md:flex items-end justify-center pb-[13%]">
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex gap-4">
             <a
               href="#program"
-              className="px-8 py-4 bg-primary-800 text-white text-lg font-semibold rounded-full hover:bg-primary-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+              className="min-w-[240px] px-8 py-4 bg-primary-800 text-white text-lg font-semibold rounded-full hover:bg-primary-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center"
             >
               Узнать подробнее
             </a>
             <a
               href="#pricing"
-              className="px-8 py-4 bg-gold-400 text-stone-900 text-lg font-semibold rounded-full hover:bg-gold-500 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+              className="min-w-[240px] px-8 py-4 bg-gold-400 text-stone-900 text-lg font-semibold rounded-full hover:bg-gold-500 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center"
             >
               Забронировать место
             </a>
