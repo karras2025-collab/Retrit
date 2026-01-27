@@ -59,18 +59,20 @@ export const Pricing: React.FC = () => {
 
                     {/* Right: Dates and Info */}
                     <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                        <h2 className="text-3xl font-serif text-primary-800 mb-8">Ближайшие даты заездов</h2>
+                        <h2 className="text-4xl md:text-5xl font-serif text-primary-800 mb-10">Ближайшие даты заездов</h2>
 
                         <div className="grid gap-6">
                             {DATES.map((item, idx) => (
-                                <div key={idx} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                    <h3 className="text-xl font-bold text-primary-700 mb-4 flex items-center gap-2">
-                                        <Calendar size={20} />
+                                <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-stone-100">
+                                    <h3 className="text-2xl font-bold text-primary-700 mb-6 flex items-center gap-3">
+                                        <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                            <Calendar size={24} className="text-primary-600" />
+                                        </div>
                                         {item.month}
                                     </h3>
-                                    <div className="flex flex-wrap gap-3">
+                                    <div className="flex flex-wrap gap-4">
                                         {item.dates.map((date, dateIdx) => (
-                                            <span key={dateIdx} className="px-4 py-2 bg-white text-stone-800 rounded-lg border border-stone-200 text-sm font-medium">
+                                            <span key={dateIdx} className="px-6 py-3 bg-gradient-to-br from-stone-50 to-stone-100 text-stone-800 rounded-xl border border-stone-200 text-lg font-bold hover:border-primary-300 hover:bg-primary-50 transition-colors cursor-default">
                                                 {date}
                                             </span>
                                         ))}

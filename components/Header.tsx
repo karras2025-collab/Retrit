@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Heart } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,13 +40,10 @@ export const Header: React.FC = () => {
 
             <div className={`h-8 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
 
-            {/* Simulating Sofi Rumi Logo */}
+            {/* Sofi Rumi Logo */}
             <div className="flex items-center gap-2">
-              <div className="relative">
-                <Heart className="w-5 h-5 text-gold-600 fill-gold-300" />
-              </div>
               <div>
-                <div className={`font-serif font-bold leading-none text-sm sm:text-base ${isScrolled ? 'text-stone-800' : 'text-white'}`}>SOFI RUMI</div>
+                <div className={`font-serif font-bold leading-none text-sm sm:text-base ${isScrolled ? 'text-stone-800' : 'text-white'}`}>Софии Руми</div>
                 <div className={`text-[8px] sm:text-[9px] uppercase tracking-widest ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>Ретритный центр тела и души</div>
               </div>
             </div>
@@ -65,7 +62,7 @@ export const Header: React.FC = () => {
             ))}
             <a
               href="tel:89260259669"
-              className={`flex items-center gap-2 font-semibold ${isScrolled ? 'text-primary-700' : 'text-gold-300'}`}
+              className={`flex items-center gap-2 font-semibold ${isScrolled ? 'text-primary-700' : 'text-white'}`}
             >
               <Phone size={16} />
               <span>+7 (926) 025-96-69</span>
