@@ -41,6 +41,8 @@ export const Gallery: React.FC = () => {
               <img
                 src={src}
                 alt={`Санаторий Первая линия ${(idx % images.length) + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
