@@ -45,6 +45,24 @@ export const Hero: React.FC = () => {
           {isMuted ? <VolumeX size={20} className="md:w-6 md:h-6" /> : <Volume2 size={20} className="md:w-6 md:h-6" />}
         </button>
 
+        {/* CTA Buttons */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#program"
+              className="px-8 py-4 bg-primary-800 text-white text-lg font-semibold rounded-full hover:bg-primary-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+            >
+              Узнать подробнее
+            </a>
+            <a
+              href="#pricing"
+              className="px-8 py-4 bg-gold-400 text-stone-900 text-lg font-semibold rounded-full hover:bg-gold-500 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+            >
+              Забронировать место
+            </a>
+          </div>
+        </div>
+
         {/* Scroll Indicator */}
         <div
           onClick={scrollToProgram}

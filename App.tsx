@@ -8,6 +8,7 @@ import { Gallery } from './components/Gallery';
 import { Reviews } from './components/Reviews';
 import { Pricing } from './components/Pricing';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Pricing />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
