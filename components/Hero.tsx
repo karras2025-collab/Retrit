@@ -21,20 +21,20 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Left Logo - Санаторий Первая Линия */}
-      <div className="absolute left-4 md:left-8 lg:left-12 bottom-[20%] z-10">
+      <div className="absolute left-4 md:left-8 lg:left-12 bottom-[45%] z-10">
         <img
           src="/logo-sanatorium.jpg"
           alt="Санаторий Первая Линия"
-          className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain drop-shadow-xl"
+          className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain drop-shadow-xl"
         />
       </div>
 
       {/* Right Logo - Sofi Rumi */}
-      <div className="absolute right-4 md:right-8 lg:right-12 bottom-[20%] z-10">
+      <div className="absolute right-4 md:right-8 lg:right-12 bottom-[45%] z-10">
         <img
           src="/logo-sofi-rumi.png"
           alt="Sofi Rumi - Ретритный центр"
-          className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain drop-shadow-xl"
+          className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain drop-shadow-xl"
         />
       </div>
 
