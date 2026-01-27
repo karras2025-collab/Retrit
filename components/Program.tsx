@@ -121,7 +121,7 @@ export const Program: React.FC = () => {
 
                     {/* For Whom Card */}
                     <div
-                        className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1"
+                        className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)]"
                         style={{
                             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 12px 24px -8px rgba(0, 0, 0, 0.08)',
                         }}
@@ -144,7 +144,7 @@ export const Program: React.FC = () => {
 
                     {/* 10-Day Results Card */}
                     <div
-                        className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1"
+                        className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)]"
                         style={{
                             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 12px 24px -8px rgba(0, 0, 0, 0.08)',
                         }}
@@ -211,7 +211,7 @@ export const Program: React.FC = () => {
                 {/* Final Quote */}
                 <div className="text-center max-w-4xl mx-auto">
                     <div
-                        className="bg-gradient-to-br from-stone-50 to-white rounded-3xl p-10 md:p-14 border border-stone-200"
+                        className="bg-gradient-to-br from-stone-50 to-white rounded-3xl p-10 md:p-14 border border-stone-200 transition-all duration-300 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)]"
                         style={{
                             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.08), 0 12px 24px -8px rgba(0, 0, 0, 0.05)',
                         }}

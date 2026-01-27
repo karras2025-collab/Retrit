@@ -15,7 +15,7 @@ export const Reviews: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {REVIEWS.map((review) => (
-                        <div key={review.id} className="bg-white p-8 md:p-10 rounded-3xl relative flex flex-col h-full border border-stone-100 shadow-lg hover:shadow-xl hover:border-gold-300 transition-all duration-300">
+                        <div key={review.id} className="bg-white p-8 md:p-10 rounded-3xl relative flex flex-col h-full border border-stone-100 shadow-lg hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)] hover:border-gold-300 transition-all duration-300">
                             <Quote className="text-gold-400 w-12 h-12 mb-6" />
 
                             {review.isVideo && review.videoUrl ? (

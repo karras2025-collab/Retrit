@@ -74,7 +74,7 @@ export const Included: React.FC = () => {
                         return (
                             <div
                                 key={idx}
-                                className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(34,87,70,0.25)] group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
+                                className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)] group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
                                 style={{
                                     boxShadow: '0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 4px 20px -5px rgba(0, 0, 0, 0.05)',
                                 }}
