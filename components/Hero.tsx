@@ -18,9 +18,9 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative flex items-end overflow-hidden pt-14 min-h-[70vh] md:min-h-screen" style={{ height: 'calc(100svh - 0px)' }}>
+    <section className="relative flex items-end overflow-hidden pt-14 min-h-[60vh] md:min-h-screen bg-stone-900" style={{ height: 'calc(100svh - 0px)' }}>
       {/* Background Video */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
         <video
           ref={videoRef}
           src="/hero-video.mp4"
@@ -28,12 +28,10 @@ export const Hero: React.FC = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-contain md:object-cover"
         />
         {/* Gradient overlay for smooth transition */}
         <div className="absolute inset-x-0 bottom-0 h-24 md:h-32 bg-gradient-to-t from-stone-50 to-transparent"></div>
-        {/* Dark overlay for better readability on mobile */}
-        <div className="absolute inset-0 bg-black/10 md:bg-transparent"></div>
       </div>
 
       {/* Sound Toggle Button */}
