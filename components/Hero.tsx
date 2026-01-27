@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
         </button>
 
         {/* CTA Buttons */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <div className="absolute inset-0 z-10 flex items-end justify-center pb-[35%] md:pb-[30%]">
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#program"
