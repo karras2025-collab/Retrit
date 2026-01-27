@@ -33,12 +33,12 @@ export const BackgroundAnimation: React.FC = () => {
         }
 
         const stars: Star[] = [];
-        const maxStars = 80; // Increased from 30
+        const maxStars = 80;
 
         const createStar = (): Star => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            size: Math.random() * 4 + 2, // Bigger stars
+            size: Math.random() * 4 + 2,
             opacity: 0,
             fadeSpeed: Math.random() * 0.015 + 0.008,
             growing: true,
@@ -91,53 +91,6 @@ export const BackgroundAnimation: React.FC = () => {
             ctx.restore();
         };
 
-        // Threads (thin golden lines)
-        interface Thread {
-            startX: number;
-            startY: number;
-            endX: number;
-            endY: number;
-            opacity: number;
-            fadeSpeed: number;
-            growing: boolean;
-        }
-
-        const threads: Thread[] = [];
-        const maxThreads = 25; // Increased from 8
-
-        const createThread = (): Thread => {
-            const horizontal = Math.random() > 0.5;
-            if (horizontal) {
-                const y = Math.random() * canvas.height;
-                return {
-                    startX: 0,
-                    startY: y,
-                    endX: canvas.width,
-                    endY: y + (Math.random() - 0.5) * 150,
-                    opacity: 0,
-                    fadeSpeed: Math.random() * 0.005 + 0.002,
-                    growing: true
-                };
-            } else {
-                const x = Math.random() * canvas.width;
-                return {
-                    startX: x,
-                    startY: 0,
-                    endX: x + (Math.random() - 0.5) * 150,
-                    endY: canvas.height,
-                    opacity: 0,
-                    fadeSpeed: Math.random() * 0.005 + 0.002,
-                    growing: true
-                };
-            }
-        };
-
-        for (let i = 0; i < maxThreads; i++) {
-            const thread = createThread();
-            thread.opacity = Math.random() * 0.15;
-            threads.push(thread);
-        }
-
         // Animation loop
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -147,7 +100,7 @@ export const BackgroundAnimation: React.FC = () => {
                 // Update opacity
                 if (star.growing) {
                     star.opacity += star.fadeSpeed;
-                    if (star.opacity >= 0.4) { // More visible
+                    if (star.opacity >= 0.4) {
                         star.growing = false;
                     }
                 } else {
@@ -162,30 +115,6 @@ export const BackgroundAnimation: React.FC = () => {
 
                 // Draw star
                 drawStar(star.x, star.y, star.size, star.opacity, star.rotation);
-            });
-
-            // Draw and update threads
-            threads.forEach((thread, index) => {
-                // Update opacity
-                if (thread.growing) {
-                    thread.opacity += thread.fadeSpeed;
-                    if (thread.opacity >= 0.2) { // More visible
-                        thread.growing = false;
-                    }
-                } else {
-                    thread.opacity -= thread.fadeSpeed;
-                    if (thread.opacity <= 0) {
-                        threads[index] = createThread();
-                    }
-                }
-
-                // Draw thread
-                ctx.beginPath();
-                ctx.moveTo(thread.startX, thread.startY);
-                ctx.lineTo(thread.endX, thread.endY);
-                ctx.strokeStyle = goldColor + thread.opacity + ')';
-                ctx.lineWidth = 1;
-                ctx.stroke();
             });
 
             requestAnimationFrame(animate);
