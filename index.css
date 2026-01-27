@@ -1,0 +1,276 @@
+/* GreenFlow Light Theme */
+:root {
+    /* Primary - Olive Green (buttons, accents) */
+    --color-primary-900: #5a6b45;
+    --color-primary-800: #6b7d52;
+    --color-primary-700: #7A8B5C;
+    --color-primary-600: #8B9A6B;
+    --color-primary-500: #9DAA7E;
+
+    /* Background - White/Cream */
+    --color-bg-white: #FFFFFF;
+    --color-bg-cream: #FAFAF8;
+    --color-bg-light: #F5F5F3;
+    --color-bg-card: #FFFFFF;
+
+    /* Text Colors */
+    --color-text-dark: #333333;
+    --color-text-medium: #666666;
+    --color-text-light: #999999;
+    --color-text-white: #FFFFFF;
+
+    /* Gold/Accent (from logo) */
+    --color-gold-500: #c9a227;
+    --color-gold-400: #d4b84a;
+    --color-gold-300: #e8d89c;
+
+    /* Borders */
+    --color-border: #E5E5E5;
+    --color-border-light: #EEEEEE;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg-cream);
+    color: var(--color-text-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+}
+
+/* Custom Tailwind-like utility classes */
+.bg-primary-900 {
+    background-color: var(--color-primary-900);
+}
+
+.bg-primary-800 {
+    background-color: var(--color-primary-800);
+}
+
+.bg-primary-700 {
+    background-color: var(--color-primary-700);
+}
+
+.bg-primary-600 {
+    background-color: var(--color-primary-600);
+}
+
+.bg-white {
+    background-color: var(--color-bg-white);
+}
+
+.bg-cream {
+    background-color: var(--color-bg-cream);
+}
+
+.bg-light {
+    background-color: var(--color-bg-light);
+}
+
+.bg-card {
+    background-color: var(--color-bg-card);
+}
+
+.bg-gold-400 {
+    background-color: var(--color-gold-400);
+}
+
+.bg-gold-500 {
+    background-color: var(--color-gold-500);
+}
+
+.text-primary-900 {
+    color: var(--color-primary-900);
+}
+
+.text-primary-800 {
+    color: var(--color-primary-800);
+}
+
+.text-primary-700 {
+    color: var(--color-primary-700);
+}
+
+.text-primary-600 {
+    color: var(--color-primary-600);
+}
+
+.text-sage-400 {
+    color: var(--color-sage-400);
+}
+
+.text-gold-400 {
+    color: var(--color-gold-400);
+}
+
+.text-gold-300 {
+    color: var(--color-gold-300);
+}
+
+.text-cream-50 {
+    color: var(--color-cream-50);
+}
+
+.from-primary-900 {
+    --tw-gradient-from: var(--color-primary-900);
+}
+
+.to-transparent {
+    --tw-gradient-to: transparent;
+}
+
+.bg-gradient-to-t {
+    background-image: linear-gradient(to top, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+/* Gold button hover */
+.hover\:text-gold-400:hover {
+    color: var(--color-gold-400);
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+
+/* Safe area support for notched devices */
+@supports (padding: max(0px)) {
+    .container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Minimum touch target size (44x44px per WCAG) */
+button,
+a,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Improved mobile typography */
+@media (max-width: 640px) {
+    html {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        line-height: 1.25;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    /* Prevent horizontal overflow */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Improve tap highlighting */
+    * {
+        -webkit-tap-highlight-color: rgba(122, 139, 92, 0.2);
+    }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+
+    .hover\:shadow-md:hover,
+    .hover\:bg-white\/15:hover,
+    .hover\:border-primary-300:hover {
+        box-shadow: none;
+        background-color: inherit;
+        border-color: inherit;
+    }
+}
+
+/* Improve scrolling performance */
+.overflow-y-auto,
+.overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Better image rendering on mobile */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Video mobile optimization */
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fixed header spacing on mobile */
+@media (max-width: 768px) {
+    main {
+        padding-top: 0;
+    }
+}
+
+/* Improved focus states for accessibility */
+:focus-visible {
+    outline: 2px solid var(--color-primary-600);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+
+    .no-print,
+    header,
+    footer,
+    button,
+    nav {
+        display: none !important;
+    }
+}
