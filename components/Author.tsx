@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Sparkles, Heart, Eye, Star, Gem } from 'lucide-react';
 
 const slides = [
@@ -66,15 +66,6 @@ const slides = [
 
 export const Author: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Auto-slide every 4 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -175,10 +166,9 @@ export const Author: React.FC = () => {
               <div className="flex items-center justify-between mt-6 pt-5 border-t border-stone-200">
                 <button
                   onClick={prevSlide}
-                  className="flex items-center gap-2 text-stone-500 hover:text-primary-700 transition-colors px-3 py-2 rounded-lg hover:bg-stone-50"
+                  className="w-10 h-10 flex items-center justify-center text-primary-800 hover:text-primary-600 hover:bg-primary-50 transition-colors rounded-full"
                 >
-                  <ChevronLeft size={20} />
-                  <span className="text-sm font-medium">Назад</span>
+                  <ChevronLeft size={28} />
                 </button>
 
                 {/* Dots */}
@@ -188,8 +178,8 @@ export const Author: React.FC = () => {
                       key={idx}
                       onClick={() => setCurrentSlide(idx)}
                       className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentSlide
-                          ? 'bg-primary-600 w-8'
-                          : 'bg-stone-300 hover:bg-stone-400 w-2.5'
+                        ? 'bg-primary-600 w-8'
+                        : 'bg-stone-300 hover:bg-stone-400 w-2.5'
                         }`}
                     />
                   ))}
@@ -197,10 +187,9 @@ export const Author: React.FC = () => {
 
                 <button
                   onClick={nextSlide}
-                  className="flex items-center gap-2 text-stone-500 hover:text-primary-700 transition-colors px-3 py-2 rounded-lg hover:bg-stone-50"
+                  className="w-10 h-10 flex items-center justify-center text-primary-800 hover:text-primary-600 hover:bg-primary-50 transition-colors rounded-full"
                 >
-                  <span className="text-sm font-medium">Далее</span>
-                  <ChevronRight size={20} />
+                  <ChevronRight size={28} />
                 </button>
               </div>
             </div>
