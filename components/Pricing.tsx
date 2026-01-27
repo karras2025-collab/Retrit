@@ -16,18 +16,18 @@ export const Pricing: React.FC = () => {
 
                     {/* Left: Pricing Card */}
                     <div className="w-full lg:w-1/2">
-                        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-stone-200 sticky top-24 transition-all duration-300 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)]">
-                            <div className="flex items-center gap-2 text-primary-600 mb-4 font-bold tracking-wider uppercase text-sm">
-                                <Users size={18} />
+                        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl border border-stone-200 sticky top-24 transition-all duration-300 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)]">
+                            <div className="flex items-center gap-2 text-primary-600 mb-4 font-bold tracking-wider uppercase text-xs sm:text-sm">
+                                <Users size={16} className="sm:w-[18px] sm:h-[18px]" />
                                 <span>Всего 25 мест в группе</span>
                             </div>
 
-                            <h2 className="text-4xl font-serif text-stone-900 mb-2">Всё включено</h2>
-                            <p className="text-stone-500 mb-8">Полный пакет участия в программе</p>
+                            <h2 className="text-3xl sm:text-4xl font-serif text-stone-900 mb-2">Всё включено</h2>
+                            <p className="text-stone-500 mb-6 sm:mb-8 text-sm sm:text-base">Полный пакет участия в программе</p>
 
-                            <div className="flex items-baseline mb-8">
-                                <span className="text-5xl font-bold text-stone-900">78 000 ₽</span>
-                                <span className="ml-2 text-stone-500">/ чел</span>
+                            <div className="flex items-baseline mb-6 sm:mb-8">
+                                <span className="text-4xl sm:text-5xl font-bold text-stone-900">78 000 ₽</span>
+                                <span className="ml-2 text-stone-500 text-sm sm:text-base">/ чел</span>
                             </div>
 
                             <ul className="space-y-4 mb-10">
@@ -59,7 +59,7 @@ export const Pricing: React.FC = () => {
 
                     {/* Right: Dates and Info */}
                     <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                        <h2 className="text-4xl md:text-5xl font-serif text-primary-800 mb-10">Ближайшие даты заездов</h2>
+                        <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif text-primary-800 mb-6 sm:mb-10">Ближайшие даты заездов</h2>
 
                         <div className="grid gap-6">
                             {DATES.map((item, idx) => (

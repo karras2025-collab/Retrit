@@ -111,7 +111,7 @@ export const Author: React.FC = () => {
           {/* Content Slider */}
           <div className="w-full lg:w-3/5">
             <div
-              className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 h-[520px] flex flex-col"
+              className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-stone-200 min-h-[400px] sm:min-h-[480px] md:h-[520px] flex flex-col"
               style={{
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02)',
                 transform: 'perspective(1000px) rotateX(1deg)',

@@ -7,12 +7,12 @@ export const Footer: React.FC = () => {
         <footer id="footer" className="bg-stone-900 text-stone-300">
 
             {/* Questions Section */}
-            <div className="bg-primary-800 py-16">
+            <div className="bg-primary-800 py-12 sm:py-16">
                 <div className="container mx-auto px-4 text-center">
-                    <h3 className="text-3xl md:text-4xl font-serif text-white mb-4">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white mb-4">
                         Остались вопросы?
                     </h3>
-                    <p className="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg text-primary-100 mb-6 sm:mb-8 max-w-2xl mx-auto">
                         Свяжитесь с нами — мы с радостью ответим на все ваши вопросы о ретрите
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
