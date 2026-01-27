@@ -191,59 +191,21 @@ export const Program: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Schedule Accordion */}
-                <div
-                    className="max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden mb-16"
-                    style={{
-                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 12px 24px -8px rgba(0, 0, 0, 0.08)',
-                    }}
-                >
-                    <div className="p-8 bg-primary-700 text-white flex justify-between items-center flex-wrap gap-4">
-                        <h3 className="text-2xl md:text-3xl font-serif">Расписание по дням</h3>
-                        <span className="text-primary-100 text-base">Нажмите на день, чтобы раскрыть детали</span>
-                    </div>
-
-                    <div className="divide-y divide-stone-100">
-                        {SCHEDULE.map((day) => (
-                            <div key={day.day} className="group">
-                                <button
-                                    onClick={() => toggleDay(day.day)}
-                                    className="w-full text-left px-8 py-6 flex items-center justify-between hover:bg-stone-50 transition-all duration-300 focus:outline-none"
-                                >
-                                    <div className="flex items-center gap-5">
-                                        <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl transition-all duration-300 ${activeDay === day.day ? 'bg-primary-600 text-white scale-110' : 'bg-stone-100 text-stone-500'
-                                            }`}>
-                                            {day.day}
-                                        </div>
-                                        <div>
-                                            <h4 className="font-semibold text-lg text-stone-800">{day.title}</h4>
-                                            <p className="text-sm text-stone-500 uppercase tracking-wide mt-1">Цель: {day.goal}</p>
-                                        </div>
-                                    </div>
-                                    <span className={`transform transition-transform duration-300 text-stone-400 text-xl ${activeDay === day.day ? 'rotate-180' : ''}`}>
-                                        ▼
-                                    </span>
-                                </button>
-
-                                {/* Accordion Content */}
-                                <div
-                                    className={`overflow-hidden transition-all duration-500 ease-out ${activeDay === day.day ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                        }`}
-                                >
-                                    <div className="px-8 pb-6 pl-24">
-                                        <ul className="space-y-3">
-                                            {day.practices.map((practice, idx) => (
-                                                <li key={idx} className="flex items-start gap-3 text-lg text-stone-600">
-                                                    <span className="w-2 h-2 rounded-full bg-primary-400 mt-2.5 shrink-0"></span>
-                                                    {practice}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                {/* Download Program Button */}
+                <div className="text-center mb-16">
+                    <a
+                        href="/10-дневная офлайн-программа в санатории может быть очень глубокой трансформацией для участников.pdf"
+                        download
+                        className="inline-flex items-center gap-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-10 py-5 rounded-2xl text-xl md:text-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+                        style={{
+                            boxShadow: '0 20px 40px -10px rgba(34, 87, 70, 0.4)',
+                        }}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Скачать программу ретрита
+                    </a>
                 </div>
 
                 {/* Final Quote */}
