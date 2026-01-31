@@ -19,7 +19,7 @@ export const Pricing: React.FC = () => {
                         <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl border border-stone-200 sticky top-24 transition-all duration-300 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)]">
                             <div className="flex items-center gap-2 text-primary-700 mb-4 font-bold tracking-wider uppercase text-xs sm:text-sm">
                                 <Users size={16} className="sm:w-[18px] sm:h-[18px]" />
-                                <span>Всего 25 мест в группе</span>
+                                <span>Всего 10 мест в группе</span>
                             </div>
 
                             <h2 className="text-3xl sm:text-4xl font-serif text-stone-900 mb-2">Всё включено</h2>

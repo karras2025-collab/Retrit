@@ -71,10 +71,8 @@ export const SCHEDULE: DaySchedule[] = [
 ];
 
 export const DATES: UpcomingDate[] = [
-  { month: "Февраль", dates: ["09.02 - 19.02"] },
-  { month: "Март", dates: ["23.03 - 02.04"] },
-  { month: "Апрель", dates: ["08.04 - 17.04", "20.04 - 30.04"] },
-  { month: "Май", dates: ["01.05 - 11.05", "21.05 - 31.05"] },
+  { month: "Февраль — Март", dates: ["09.02 - 19.02", "23.03 - 02.04"] },
+  { month: "Апрель — Май", dates: ["08.04 - 17.04", "20.04 - 30.04", "01.05 - 11.05", "21.05 - 31.05"] },
 ];
 
 export const REVIEWS: Testimonial[] = [
