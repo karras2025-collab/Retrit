@@ -57,17 +57,19 @@ export const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`text-xs font-medium uppercase tracking-wide transition-colors ${isScrolled ? 'text-stone-700 hover:text-primary-600' : 'text-white/90 hover:text-white'}`}
-              >
-                {link.name}
-              </a>
-            ))}
+          {/* Desktop Nav + Phone */}
+          <div className="hidden lg:flex items-center gap-6">
+            <nav className="flex items-center gap-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`text-xs font-medium uppercase tracking-wide transition-colors ${isScrolled ? 'text-stone-700 hover:text-primary-600' : 'text-white/90 hover:text-white'}`}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
 
             <div className={`h-4 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
 
@@ -78,7 +80,7 @@ export const Header: React.FC = () => {
               <Phone size={14} />
               <span>+7 (926) 025-96-69</span>
             </a>
-          </nav>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
