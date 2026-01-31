@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-primary-800 backdrop-blur-sm'}`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-14">
+        <div className="flex justify-between items-center h-16">
           {/* Logos Area */}
           <div className="flex items-center gap-6">
             {/* Sanatorium Logo */}
@@ -36,22 +36,22 @@ export const Header: React.FC = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center justify-center hover:opacity-80 transition-opacity"
             >
-              <span className={`font-serif font-bold tracking-widest uppercase text-xs ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 ПЕРВАЯ ЛИНИЯ
               </span>
-              <span className={`text-[8px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[10px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Санаторий
               </span>
             </a>
 
-            <div className={`h-6 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
+            <div className={`h-8 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
 
             {/* Sofi Rumi Logo */}
             <div className="flex flex-col items-center justify-center">
-              <span className={`font-serif font-bold tracking-widest uppercase text-xs ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 СОФИ РУМИ
               </span>
-              <span className={`text-[8px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[10px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Ретритный центр тела и души
               </span>
             </div>
@@ -75,7 +75,7 @@ export const Header: React.FC = () => {
               href="tel:89260259669"
               className={`flex items-center gap-1.5 font-semibold text-xs ${isScrolled ? 'text-primary-700' : 'text-white'}`}
             >
-              <Phone size={12} />
+              <Phone size={14} />
               <span>+7 (926) 025-96-69</span>
             </a>
           </nav>
