@@ -25,11 +25,11 @@ export const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-primary-800 backdrop-blur-sm'}`}
     >
-      <div className="container mx-auto px-3 sm:px-4">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 sm:h-18 lg:h-16">
 
           {/* Logos Area */}
-          <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
+          <div className="flex items-center gap-4 sm:gap-5 lg:gap-6">
             {/* Sanatorium Logo */}
             <a
               href="https://pervayalinia.ru/"
@@ -37,22 +37,22 @@ export const Header: React.FC = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-start hover:opacity-80 transition-opacity"
             >
-              <span className={`font-serif font-bold tracking-widest uppercase text-[10px] sm:text-xs lg:text-base leading-tight ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-sm sm:text-base lg:text-lg leading-tight ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 ПЕРВАЯ ЛИНИЯ
               </span>
-              <span className={`text-[8px] sm:text-[9px] lg:text-xs uppercase tracking-wider leading-tight ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider leading-tight ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Санаторий
               </span>
             </a>
 
-            <div className={`h-6 sm:h-8 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
+            <div className={`h-8 sm:h-10 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
 
             {/* Sofi Rumi Logo */}
             <div className="flex flex-col items-start">
-              <span className={`font-serif font-bold tracking-widest uppercase text-[10px] sm:text-xs lg:text-base leading-tight ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-sm sm:text-base lg:text-lg leading-tight ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 СОФИ РУМИ
               </span>
-              <span className={`text-[8px] sm:text-[9px] lg:text-xs uppercase tracking-wider leading-tight ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider leading-tight ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Ретритный центр
               </span>
             </div>
@@ -83,7 +83,7 @@ export const Header: React.FC = () => {
             className={`lg:hidden p-2 ${isScrolled ? 'text-stone-700' : 'text-white'}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -97,7 +97,7 @@ export const Header: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-stone-700 text-base font-medium py-3 px-2 border-b border-stone-100 hover:bg-stone-50 transition-colors rounded-lg"
+                  className="text-stone-700 text-base font-medium py-3 px-3 border-b border-stone-100 hover:bg-stone-50 transition-colors rounded-lg"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
