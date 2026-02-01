@@ -36,10 +36,10 @@ export const Header: React.FC = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center justify-center hover:opacity-80 transition-opacity"
             >
-              <span className={`font-serif font-bold tracking-widest uppercase text-base ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-xs sm:text-sm lg:text-base ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 ПЕРВАЯ ЛИНИЯ
               </span>
-              <span className={`text-xs uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[8px] sm:text-[10px] lg:text-xs uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Санаторий
               </span>
             </a>
@@ -48,10 +48,10 @@ export const Header: React.FC = () => {
 
             {/* Sofi Rumi Logo */}
             <div className="flex flex-col items-center justify-center">
-              <span className={`font-serif font-bold tracking-widest uppercase text-base ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-xs sm:text-sm lg:text-base ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 СОФИ РУМИ
               </span>
-              <span className={`text-xs uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[8px] sm:text-[10px] lg:text-xs uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'} hidden sm:block`}>
                 Ретритный центр тела и души
               </span>
             </div>

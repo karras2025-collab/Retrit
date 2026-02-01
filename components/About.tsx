@@ -51,24 +51,24 @@ export const About: React.FC = () => {
     ];
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-12 sm:py-14 md:py-16 bg-white">
             <div className="container mx-auto px-4">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 text-primary-600 text-sm font-bold uppercase tracking-widest mb-4">
+                <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                    <div className="inline-flex items-center gap-2 text-primary-600 text-xs sm:text-sm font-bold uppercase tracking-widest mb-3 sm:mb-4">
                         <span>Трансформационный ретрит</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-serif text-primary-800 mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-primary-800 mb-3 sm:mb-4">
                         «ВОЗРОЖДЕНИЕ» в Санатории Первая линия
                     </h2>
-                    <p className="text-stone-600 max-w-2xl mx-auto text-sm md:text-base">
+                    <p className="text-stone-600 max-w-2xl mx-auto text-sm md:text-base px-2">
                         Путешествие к телесному здоровью, эмоциональной гармонии и новой жизненной энергии.
                         Это не просто отдых — это мягкая, глубокая перезагрузка тела, психики и жизненного сценария.
                     </p>
                 </div>
 
                 {/* Program Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
                     {sections.map((section, idx) => (
                         <div
                             key={idx}

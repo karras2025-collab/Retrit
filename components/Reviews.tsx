@@ -4,16 +4,16 @@ import { Quote } from 'lucide-react';
 
 export const Reviews: React.FC = () => {
     return (
-        <section id="reviews" className="py-24 bg-gradient-to-b from-stone-50 to-white">
+        <section id="reviews" className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-stone-50 to-white">
             <div className="container mx-auto px-4">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-center text-primary-800 mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-center text-primary-800 mb-4 sm:mb-6">
                     Истории участников
                 </h2>
-                <p className="text-center text-lg md:text-xl text-stone-500 mb-16 max-w-2xl mx-auto">
+                <p className="text-center text-base sm:text-lg md:text-xl text-stone-500 mb-10 sm:mb-12 md:mb-16 max-w-2xl mx-auto px-2">
                     Отзывы женщин, прошедших программы Софии Ибрагимовой
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {REVIEWS.map((review) => (
                         <div key={review.id} className="bg-white p-8 md:p-10 rounded-3xl relative flex flex-col h-full border border-stone-100 shadow-lg hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)] hover:border-gold-300 transition-all duration-300">
                             <Quote className="text-gold-400 w-12 h-12 mb-6" />

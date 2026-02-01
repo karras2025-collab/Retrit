@@ -67,25 +67,25 @@ const includedSections = [
 
 export const Included: React.FC = () => {
     return (
-        <section className="py-24 bg-gradient-to-b from-stone-50 to-white">
+        <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-stone-50 to-white">
             <div className="container mx-auto px-4">
 
                 {/* Section Title */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-8 sm:mb-10 md:mb-12">
 
-                    <h3 className="text-3xl md:text-4xl font-serif text-primary-800 mt-4">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-primary-800 mt-4">
                         Что входит в программу ретрита
                     </h3>
                 </div>
 
                 {/* Cards Grid */}
-                <div className="flex flex-wrap justify-center gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {includedSections.map((section, idx) => {
                         const Icon = section.icon;
                         return (
                             <div
                                 key={idx}
-                                className="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)] group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
+                                className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-stone-200 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 hover:border-gold-300 hover:shadow-[0_20px_50px_-15px_rgba(34,87,70,0.2)] group"
                                 style={{
                                     boxShadow: '0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 4px 20px -5px rgba(0, 0, 0, 0.05)',
                                 }}

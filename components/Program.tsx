@@ -109,15 +109,15 @@ export const Program: React.FC = () => {
             <div className="container mx-auto px-4 relative z-10">
 
                 {/* Main Title */}
-                <div className="text-center mb-16 max-w-4xl mx-auto">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16 max-w-4xl mx-auto px-2">
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-primary-800 mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-primary-800 mb-3 sm:mb-4">
                         Трансформационный ретрит
                     </h2>
-                    <h3 className="text-3xl md:text-4xl font-serif text-gold-600 mb-6">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-gold-600 mb-4 sm:mb-6">
                         «ВОЗРОЖДЕНИЕ» в Санатории Первая линия
                     </h3>
-                    <p className="text-xl md:text-2xl text-stone-600 leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-stone-600 leading-relaxed">
                         Путешествие к телесному здоровью, эмоциональной гармонии и новой жизненной энергии.
                         Это не просто отдых — это мягкая, глубокая перезагрузка тела, психики и жизненного сценария.
                     </p>
