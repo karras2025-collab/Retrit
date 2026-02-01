@@ -26,33 +26,35 @@ export const Header: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-primary-800 backdrop-blur-sm'}`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 sm:h-18 lg:h-16">
+        <div className="flex items-center justify-between h-16">
 
-          {/* Logos Area */}
-          <div className="flex items-center gap-4 sm:gap-5 lg:gap-6">
+          {/* Logos Area - Fixed height container with centered items */}
+          <div className="flex items-center gap-4 sm:gap-5 lg:gap-6 h-12">
+
             {/* Sanatorium Logo */}
             <a
               href="https://pervayalinia.ru/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-start hover:opacity-80 transition-opacity"
+              className="flex flex-col justify-center h-full hover:opacity-80 transition-opacity"
             >
-              <span className={`font-serif font-bold tracking-widest uppercase text-sm sm:text-base lg:text-lg leading-tight ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-sm sm:text-base lg:text-lg leading-none ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 ПЕРВАЯ ЛИНИЯ
               </span>
-              <span className={`text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider leading-tight ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider leading-none mt-1 ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Санаторий
               </span>
             </a>
 
-            <div className={`h-8 sm:h-10 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
+            {/* Divider - centered */}
+            <div className={`h-10 w-px self-center ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
 
             {/* Sofi Rumi Logo */}
-            <div className="flex flex-col items-start">
-              <span className={`font-serif font-bold tracking-widest uppercase text-sm sm:text-base lg:text-lg leading-tight ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+            <div className="flex flex-col justify-center h-full">
+              <span className={`font-serif font-bold tracking-widest uppercase text-sm sm:text-base lg:text-lg leading-none ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 СОФИ РУМИ
               </span>
-              <span className={`text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider leading-tight ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider leading-none mt-1 ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Ретритный центр
               </span>
             </div>
