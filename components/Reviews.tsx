@@ -10,7 +10,7 @@ export const Reviews: React.FC = () => {
                     Истории участников
                 </h2>
                 <p className="text-center text-lg md:text-xl text-stone-500 mb-16 max-w-2xl mx-auto">
-                    Отзывы женщин, прошедших программу «Возрождение»
+                    Отзывы женщин, прошедших программы Софии Ибрагимовой
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

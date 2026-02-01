@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
         <footer id="footer" className="bg-stone-900 text-stone-300">
 
             {/* Questions Section */}
-            <div className="bg-primary-800 py-12 sm:py-16">
+            <div className="bg-primary-800 py-5 sm:py-6">
                 <div className="container mx-auto px-4 text-center">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white mb-4">
                         Остались вопросы?
