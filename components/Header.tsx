@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
               ))}
               <a
                 href="tel:89260259669"
-                className={`flex items-center gap-2 font-semibold text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}
+                className={`flex items-center gap-2 font-semibold text-sm -mt-1 ${isScrolled ? 'text-primary-700' : 'text-white'}`}
               >
                 <Phone size={16} />
                 <span>+7 (926) 025-96-69</span>
