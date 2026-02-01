@@ -27,8 +27,9 @@ export const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
+
           {/* Logos Area */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 lg:gap-6">
             {/* Sanatorium Logo */}
             <a
               href="https://pervayalinia.ru/"
@@ -36,10 +37,10 @@ export const Header: React.FC = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center justify-center hover:opacity-80 transition-opacity"
             >
-              <span className={`font-serif font-bold tracking-widest uppercase text-xs sm:text-sm lg:text-base ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-xs sm:text-sm lg:text-base leading-none ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 ПЕРВАЯ ЛИНИЯ
               </span>
-              <span className={`text-[8px] sm:text-[10px] lg:text-xs uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-[8px] sm:text-[10px] lg:text-xs uppercase tracking-wider leading-none mt-0.5 ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Санаторий
               </span>
             </a>
@@ -48,36 +49,34 @@ export const Header: React.FC = () => {
 
             {/* Sofi Rumi Logo */}
             <div className="flex flex-col items-center justify-center">
-              <span className={`font-serif font-bold tracking-widest uppercase text-xs sm:text-sm lg:text-base ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-xs sm:text-sm lg:text-base leading-none ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 СОФИ РУМИ
               </span>
-              <span className={`text-[8px] sm:text-[10px] lg:text-xs uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'} hidden sm:block`}>
+              <span className={`text-[8px] sm:text-[10px] lg:text-xs uppercase tracking-wider leading-none mt-0.5 ${isScrolled ? 'text-stone-500' : 'text-stone-300'} hidden sm:block`}>
                 Ретритный центр тела и души
               </span>
             </div>
           </div>
 
-          {/* Desktop Nav + Phone */}
-          <div className="hidden lg:flex items-center gap-6">
-            <nav className="flex items-center gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-sm font-medium uppercase tracking-wide transition-colors ${isScrolled ? 'text-stone-700 hover:text-primary-600' : 'text-white/90 hover:text-white'}`}
-                >
-                  {link.name}
-                </a>
-              ))}
+          {/* Desktop Navigation - Single Row */}
+          <nav className="hidden lg:flex items-center gap-5">
+            {navLinks.map((link) => (
               <a
-                href="tel:89260259669"
-                className={`flex items-center gap-2 font-semibold text-sm -mt-1 ${isScrolled ? 'text-primary-700' : 'text-white'}`}
+                key={link.name}
+                href={link.href}
+                className={`text-sm font-medium uppercase tracking-wide transition-colors leading-none ${isScrolled ? 'text-stone-700 hover:text-primary-600' : 'text-white/90 hover:text-white'}`}
               >
-                <Phone size={16} />
-                <span>+7 (926) 025-96-69</span>
+                {link.name}
               </a>
-            </nav>
-          </div>
+            ))}
+            <a
+              href="tel:89260259669"
+              className={`flex items-center gap-1.5 font-semibold text-sm leading-none ${isScrolled ? 'text-primary-700' : 'text-white'}`}
+            >
+              <Phone size={14} />
+              <span>+7 (926) 025-96-69</span>
+            </a>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
@@ -104,9 +103,10 @@ export const Header: React.FC = () => {
           ))}
           <a
             href="tel:89260259669"
-            className="text-primary-700 font-bold text-sm block py-2"
+            className="flex items-center gap-2 text-primary-700 font-bold text-sm py-2"
           >
-            +7 (926) 025-96-69
+            <Phone size={16} />
+            <span>+7 (926) 025-96-69</span>
           </a>
         </div>
       )}
