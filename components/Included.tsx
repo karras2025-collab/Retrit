@@ -4,7 +4,7 @@ import { Home, Stethoscope, Droplets, Brain, Moon } from 'lucide-react';
 const includedSections = [
     {
         icon: Home,
-        emoji: "🏡",
+        emoji: "",
         title: "Пространство для восстановления",
         items: [
             "Проживание в комфортабельном двухместном номере, созданном для глубокого отдыха",
@@ -19,7 +19,7 @@ const includedSections = [
     },
     {
         icon: Stethoscope,
-        emoji: "👩‍⚕️",
+        emoji: "",
         title: "Профессиональное сопровождение тела и здоровья",
         items: [
             "Индивидуальная консультация эндокринолога — гармонизация гормонального фона и восстановление естественного потока жизненной энергии",
@@ -32,7 +32,7 @@ const includedSections = [
     },
     {
         icon: Droplets,
-        emoji: "💧",
+        emoji: "",
         title: "Телесные практики обновления",
         items: [
             "Бережные телесные практики обновления, возвращающие чувствительность, лёгкость и живость тела",
@@ -45,7 +45,7 @@ const includedSections = [
     },
     {
         icon: Brain,
-        emoji: "🧘‍♀️",
+        emoji: "",
         title: "Психоэмоциональная трансформация",
         items: [
             "Ежедневные медитации и практики осознанности",
@@ -55,7 +55,7 @@ const includedSections = [
     },
     {
         icon: Moon,
-        emoji: "🌙",
+        emoji: "",
         title: "Ритуалы глубокой перезагрузки",
         items: [
             "Вечерние прогулки на природе — мягкая интеграция, заземление и восстановление ритмов",
@@ -72,7 +72,7 @@ export const Included: React.FC = () => {
 
                 {/* Section Title */}
                 <div className="text-center mb-12">
-                    <span className="text-3xl">✨</span>
+
                     <h3 className="text-3xl md:text-4xl font-serif text-primary-800 mt-4">
                         Что входит в программу ретрита
                     </h3>
@@ -93,7 +93,7 @@ export const Included: React.FC = () => {
                                 {/* Card Header */}
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-                                        <span className="text-2xl">{section.emoji}</span>
+                                        <Icon className="w-7 h-7 text-primary-700" />
                                     </div>
                                     <h4 className="text-xl md:text-2xl font-serif text-primary-800 leading-tight">
                                         {section.title}

@@ -56,7 +56,6 @@ export const About: React.FC = () => {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center gap-2 text-primary-600 text-sm font-bold uppercase tracking-widest mb-4">
-                        <span>🌿</span>
                         <span>Трансформационный ретрит</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-serif text-primary-800 mb-4">
@@ -96,25 +95,24 @@ export const About: React.FC = () => {
                 {/* Results Section */}
                 <div className="mt-12 bg-gradient-to-r from-primary-50 to-gold-50 rounded-2xl p-8 text-center">
                     <div className="inline-flex items-center gap-2 text-primary-600 text-sm font-bold uppercase tracking-widest mb-4">
-                        <span>🌸</span>
                         <span>Результат ретрита «Возрождение»</span>
                     </div>
                     <p className="text-stone-700 font-medium mb-6">После программы участники:</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto text-left">
                         <div className="flex items-start gap-3">
-                            <span className="text-gold-500">✨</span>
+                            <span className="w-2 h-2 bg-gold-500 rounded-full mt-2"></span>
                             <span className="text-stone-700">чувствуют легкость в теле и ясность в голове</span>
                         </div>
                         <div className="flex items-start gap-3">
-                            <span className="text-gold-500">✨</span>
+                            <span className="w-2 h-2 bg-gold-500 rounded-full mt-2"></span>
                             <span className="text-stone-700">восстанавливают энергию и эмоциональный баланс</span>
                         </div>
                         <div className="flex items-start gap-3">
-                            <span className="text-gold-500">✨</span>
+                            <span className="w-2 h-2 bg-gold-500 rounded-full mt-2"></span>
                             <span className="text-stone-700">получают новые стратегии жизни и внутреннюю опору</span>
                         </div>
                         <div className="flex items-start gap-3">
-                            <span className="text-gold-500">✨</span>
+                            <span className="w-2 h-2 bg-gold-500 rounded-full mt-2"></span>
                             <span className="text-stone-700">выходят с ощущением «Я заново родился/родилась»</span>
                         </div>
                     </div>

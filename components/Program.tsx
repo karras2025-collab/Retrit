@@ -109,7 +109,7 @@ export const Program: React.FC = () => {
 
                 {/* Main Title */}
                 <div className="text-center mb-16 max-w-4xl mx-auto">
-                    <span className="text-4xl mb-4 block">🌿</span>
+
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-primary-800 mb-4">
                         Трансформационный ретрит
                     </h2>
@@ -159,7 +159,7 @@ export const Program: React.FC = () => {
                             <div className="w-14 h-14 bg-gradient-to-br from-gold-100 to-gold-200 rounded-2xl flex items-center justify-center shadow-inner">
                                 <Target className="w-7 h-7 text-gold-700" />
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-serif text-primary-800">🎯 Результат за 10 дней</h3>
+                            <h3 className="text-2xl md:text-3xl font-serif text-primary-800">Результат за 10 дней</h3>
                         </div>
                         <ul className="space-y-3">
                             {results.map((item, idx) => (
@@ -185,7 +185,7 @@ export const Program: React.FC = () => {
                             <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
                                 <Gift className="w-8 h-8 text-gold-300" />
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-serif">🌸 БОНУС: Программа после ретрита</h3>
+                            <h3 className="text-2xl md:text-3xl font-serif">БОНУС: Программа после ретрита</h3>
                         </div>
                         <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             {bonusItems.map((item, idx) => (
@@ -224,7 +224,7 @@ export const Program: React.FC = () => {
                     >
                         <Sparkles className="w-12 h-12 text-gold-500 mx-auto mb-6" />
                         <blockquote className="text-2xl md:text-3xl font-serif text-primary-800 leading-relaxed mb-6">
-                            💎 Ретрит «Возрождение» — это пространство, где тело исцеляется, эмоции освобождаются, а сознание создаёт новую реальность.
+                            Ретрит «Возрождение» — это пространство, где тело исцеляется, эмоции освобождаются, а сознание создаёт новую реальность.
                         </blockquote>
                         <p className="text-xl md:text-2xl text-stone-600 font-medium">
                             Это не отдых. Это новая точка отсчёта вашей жизни.
