@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
                 СОФИ РУМИ
               </span>
               <span className={`text-[10px] sm:text-xs lg:text-sm uppercase tracking-wider leading-none mt-1 ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
-                Ретритный центр
+                Ретритный центр тела и души
               </span>
             </div>
           </div>
