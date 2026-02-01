@@ -69,17 +69,14 @@ export const Header: React.FC = () => {
                   {link.name}
                 </a>
               ))}
+              <a
+                href="tel:89260259669"
+                className={`flex items-center gap-2 font-semibold text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}
+              >
+                <Phone size={16} />
+                <span>+7 (926) 025-96-69</span>
+              </a>
             </nav>
-
-            <div className={`h-4 w-px ${isScrolled ? 'bg-stone-300' : 'bg-white/30'}`}></div>
-
-            <a
-              href="tel:89260259669"
-              className={`flex items-center gap-2 font-semibold text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}
-            >
-              <Phone size={16} />
-              <span>+7 (926) 025-96-69</span>
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
