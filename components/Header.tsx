@@ -36,10 +36,10 @@ export const Header: React.FC = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center justify-center hover:opacity-80 transition-opacity"
             >
-              <span className={`font-serif font-bold tracking-widest uppercase text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-base ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 ПЕРВАЯ ЛИНИЯ
               </span>
-              <span className={`text-[10px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-xs uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Санаторий
               </span>
             </a>
@@ -48,10 +48,10 @@ export const Header: React.FC = () => {
 
             {/* Sofi Rumi Logo */}
             <div className="flex flex-col items-center justify-center">
-              <span className={`font-serif font-bold tracking-widest uppercase text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
+              <span className={`font-serif font-bold tracking-widest uppercase text-base ${isScrolled ? 'text-primary-700' : 'text-white'}`}>
                 СОФИ РУМИ
               </span>
-              <span className={`text-[10px] uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
+              <span className={`text-xs uppercase tracking-wider ${isScrolled ? 'text-stone-500' : 'text-stone-300'}`}>
                 Ретритный центр тела и души
               </span>
             </div>
@@ -64,7 +64,7 @@ export const Header: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-xs font-medium uppercase tracking-wide transition-colors ${isScrolled ? 'text-stone-700 hover:text-primary-600' : 'text-white/90 hover:text-white'}`}
+                  className={`text-sm font-medium uppercase tracking-wide transition-colors ${isScrolled ? 'text-stone-700 hover:text-primary-600' : 'text-white/90 hover:text-white'}`}
                 >
                   {link.name}
                 </a>
@@ -75,9 +75,9 @@ export const Header: React.FC = () => {
 
             <a
               href="tel:89260259669"
-              className={`flex items-center gap-1.5 font-semibold text-xs ${isScrolled ? 'text-primary-700' : 'text-white'}`}
+              className={`flex items-center gap-2 font-semibold text-sm ${isScrolled ? 'text-primary-700' : 'text-white'}`}
             >
-              <Phone size={14} />
+              <Phone size={16} />
               <span>+7 (926) 025-96-69</span>
             </a>
           </div>

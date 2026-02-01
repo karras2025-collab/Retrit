@@ -99,7 +99,6 @@ export const Author: React.FC = () => {
                 alt="София Ибрагимова"
                 className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/40 to-transparent"></div>
             </div>
 
             {/* Decorative frame */}

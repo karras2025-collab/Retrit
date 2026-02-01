@@ -55,20 +55,20 @@ export const Footer: React.FC = () => {
                         <div>
                             <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Контакты</h4>
                             <ul className="space-y-4">
-                                <li className="flex items-center gap-3 hover:text-white transition-colors">
-                                    <Phone size={16} />
+                                <li className="flex items-start gap-3 hover:text-white transition-colors">
+                                    <Phone size={16} className="shrink-0 mt-0.5" />
                                     <a href="tel:+79260259669">+7 (926) 025-96-69</a>
                                 </li>
-                                <li className="flex items-center gap-3 hover:text-white transition-colors">
-                                    <MessageCircle size={16} />
+                                <li className="flex items-start gap-3 hover:text-white transition-colors">
+                                    <MessageCircle size={16} className="shrink-0 mt-0.5" />
                                     <a href="https://wa.me/79260259669" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                                 </li>
-                                <li className="flex items-center gap-3 hover:text-white transition-colors">
-                                    <Send size={16} />
+                                <li className="flex items-start gap-3 hover:text-white transition-colors">
+                                    <Send size={16} className="shrink-0 mt-0.5" />
                                     <a href="https://t.me/Sofia_Rumi" target="_blank" rel="noopener noreferrer">@Sofia_Rumi</a>
                                 </li>
-                                <li className="flex items-center gap-3">
-                                    <MapPin size={16} className="shrink-0" />
+                                <li className="flex items-start gap-3">
+                                    <MapPin size={16} className="shrink-0 mt-0.5" />
                                     <span>г. Каспийск, Санаторий «Первая линия»</span>
                                 </li>
                             </ul>
