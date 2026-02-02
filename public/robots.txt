@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sofirumi.com/sitemap.xml
+Sitemap: https://sofirumi.ru/sitemap.xml
 
 # Disallow admin/private pages
 Disallow: /secret_key.txt
