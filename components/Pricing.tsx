@@ -37,7 +37,7 @@ export const Pricing: React.FC = () => {
                                     "Полная программа практик (10 дней)",
                                     "Медицинские консультации",
                                     "Массажи и СПА процедуры",
-                                    "Сопровождение кураторов"
+                                    "Сопровождение Софии"
                                 ].map((feature, idx) => (
                                     <li key={idx} className="flex items-center gap-3">
                                         <div className="bg-primary-100 rounded-full p-1">
